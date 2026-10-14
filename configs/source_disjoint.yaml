@@ -1,0 +1,10 @@
+# Robustness experiment: whole MemoSen source pages are held out (no page appears in two splits).
+# Everything else is inherited from config.yaml; outputs go to separate folders.
+base: config.yaml
+dataset:
+  split:
+    strategy: source_disjoint
+paths:
+  processed_dir: data/processed_source_disjoint
+  checkpoints_dir: artifacts/checkpoints_source_disjoint
+  reports_dir: artifacts/reports_source_disjoint

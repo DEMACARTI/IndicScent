@@ -1,0 +1,76 @@
+# IndicSent-M experiment configuration.
+# Every training/evaluation run copies this file (with resolved values) into its
+# checkpoint directory so that results can be traced back to an exact setup.
+
+seed: 42
+device: auto            # auto | cpu | mps | cuda
+
+labels: [positive, neutral, negative]   # class index order used everywhere
+
+paths:
+  raw_dir: data/raw
+  processed_dir: data/processed
+  sample_dir: data/sample
+  checkpoints_dir: artifacts/checkpoints
+  reports_dir: artifacts/reports
+
+dataset:
+  # memosen  -> Bengali meme sentiment dataset (Hossain et al., LREC 2022)
+  # csv      -> any CSV with text / image / label columns (e.g. Memotion 3 after registration)
+  # sample   -> the small SYNTHETIC dataset in data/sample (pipeline testing only)
+  name: memosen
+  memosen:
+    root: data/raw/memosen
+  csv:
+    csv_path: data/raw/custom/labels.csv
+    image_dir: data/raw/custom/images
+    text_column: text
+    image_column: image
+    label_column: label
+    # map raw label strings (lower-cased) to the canonical classes
+    label_map: {positive: positive, neutral: neutral, negative: negative}
+  split:
+    val_size: 0.10
+    test_size: 0.20
+    use_official_split: true     # respected when the dataset ships its own split
+    strategy: group_stratified   # group_stratified | source_disjoint (see configs/source_disjoint.yaml)
+  # Validated images are re-saved once as RGB JPEG with this longest side (aspect kept) under
+  # data/cache/ so that training does not decode multi-megapixel files every epoch. The model
+  # input is 224 px, so 448 px loses no information the model can use. null = disabled.
+  image_cache_max_side: 448
+  validation:
+    min_image_side: 32           # px; smaller images are treated as unusable
+    max_image_pixels: 40000000   # guards against decompression bombs
+
+text:
+  model_name: FacebookAI/xlm-roberta-base
+  max_length: 96
+  trainable_layers: 4            # top-N encoder layers fine-tuned; embeddings + rest frozen
+  pooling: mean                  # mean | cls
+
+image:
+  backbone: resnet50
+  image_size: 224
+  trainable_blocks: [layer4]     # ResNet stages fine-tuned; the rest frozen (BN kept in eval)
+
+multimodal:
+  proj_dim: 256
+  attention_heads: 4
+
+training:
+  batch_size: 16
+  eval_batch_size: 32
+  max_epochs: 8
+  patience: 3                    # early stopping on validation macro-F1
+  lr_backbone: 2.0e-5            # text encoder layers
+  lr_image_backbone: 1.0e-4      # unfrozen ResNet stages
+  lr_head: 1.0e-3
+  weight_decay: 0.01
+  warmup_ratio: 0.1
+  dropout: 0.3
+  grad_clip: 1.0
+  class_weighting: sqrt_balanced # none | balanced | sqrt_balanced
+  num_workers: 0
+
+explainability:
+  ig_steps: 32

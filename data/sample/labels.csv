@@ -1,0 +1,28 @@
+id,text,image,label,synthetic
+synthetic_000,আজকের দিনটা দারুণ কাটলো! 😄,synthetic_000.png,positive,True
+synthetic_001,আমি খুব খুশি,synthetic_001.png,positive,True
+synthetic_002,দারুণ খেলা হয়েছে আজ,synthetic_002.png,positive,True
+synthetic_003,यह फिल्म बहुत अच्छी थी 👍,synthetic_003.png,positive,True
+synthetic_004,aaj ka din mast tha yaar 😂,synthetic_004.png,positive,True
+synthetic_005,"Exam pass ho gaya, finally!!! 🎉",synthetic_005.png,positive,True
+synthetic_006,Best chai ever ☕❤️,synthetic_006.png,positive,True
+synthetic_007,"kya baat hai, superb performance",synthetic_007.png,positive,True
+synthetic_008,আজ সোমবার,synthetic_008.png,neutral,True
+synthetic_009,ট্রেন সকাল ৯টায় ছাড়বে,synthetic_009.png,neutral,True
+synthetic_010,कल बारिश हो सकती है,synthetic_010.png,neutral,True
+synthetic_011,पानी की बोतल मेज़ पर है,synthetic_011.png,neutral,True
+synthetic_012,meeting 5 baje hai,synthetic_012.png,neutral,True
+synthetic_013,office ja raha hoon,synthetic_013.png,neutral,True
+synthetic_014,This is the new syllabus,synthetic_014.png,neutral,True
+synthetic_015,Results will be announced tomorrow,synthetic_015.png,neutral,True
+synthetic_016,একদম বাজে সিনেমা 😡,synthetic_016.png,negative,True
+synthetic_017,আমার মন খারাপ,synthetic_017.png,negative,True
+synthetic_018,পরীক্ষা খুব খারাপ হয়েছে,synthetic_018.png,negative,True
+synthetic_019,यह बिल्कुल अच्छा नहीं था,synthetic_019.png,negative,True
+synthetic_020,traffic ne din kharab kar diya 😤,synthetic_020.png,negative,True
+synthetic_021,"network nahi hai, bekaar 😒",synthetic_021.png,negative,True
+synthetic_022,mood off hai aaj,synthetic_022.png,negative,True
+synthetic_023,"Worst service ever, never again",synthetic_023.png,negative,True
+synthetic_corrupt,corrupt image row,synthetic_corrupt.png,neutral,True
+synthetic_missing,missing image row,does_not_exist.png,neutral,True
+synthetic_notext,,synthetic_notext.png,positive,True

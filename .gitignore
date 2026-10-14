@@ -1,0 +1,33 @@
+# environments
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+.DS_Store
+
+# data: raw datasets are not redistributed; regenerate with src/data/download.py + prepare.py
+data/raw/
+data/processed/
+data/cache/
+
+# model weights / large artifacts (regenerate with scripts/run_pipeline.py)
+artifacts/checkpoints/
+artifacts/logs/
+*.pt
+*.pth
+*.safetensors
+
+# secrets
+.env
+*.key
+kaggle.json
+
+# generated outputs not part of the main code (regenerate with scripts/run_pipeline.py,
+# scripts/make_slides.py and scripts/make_report_pdf.py)
+data/processed_source_disjoint/
+artifacts/
+docs/figures/
+*.pdf
+*.pptx

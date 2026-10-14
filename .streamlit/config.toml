@@ -1,0 +1,9 @@
+[server]
+maxUploadSize = 10          # MB; the app also validates size/format itself
+headless = true
+
+[browser]
+gatherUsageStats = false
+
+[theme]
+primaryColor = "#1f6fb2"
