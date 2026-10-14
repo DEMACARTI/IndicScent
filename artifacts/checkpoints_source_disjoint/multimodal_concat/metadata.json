@@ -1,0 +1,115 @@
+{
+  "experiment": "multimodal_concat",
+  "modality": "multimodal",
+  "fusion": "concat",
+  "epoch": 3,
+  "val_macro_f1": 0.4105968175681813,
+  "val_accuracy": 0.602203182374541,
+  "labels": [
+    "positive",
+    "neutral",
+    "negative"
+  ],
+  "config": {
+    "seed": 42,
+    "device": "auto",
+    "labels": [
+      "positive",
+      "neutral",
+      "negative"
+    ],
+    "paths": {
+      "raw_dir": "data/raw",
+      "processed_dir": "data/processed_source_disjoint",
+      "sample_dir": "data/sample",
+      "checkpoints_dir": "artifacts/checkpoints_source_disjoint",
+      "reports_dir": "artifacts/reports_source_disjoint"
+    },
+    "dataset": {
+      "name": "memosen",
+      "memosen": {
+        "root": "data/raw/memosen"
+      },
+      "csv": {
+        "csv_path": "data/raw/custom/labels.csv",
+        "image_dir": "data/raw/custom/images",
+        "text_column": "text",
+        "image_column": "image",
+        "label_column": "label",
+        "label_map": {
+          "positive": "positive",
+          "neutral": "neutral",
+          "negative": "negative"
+        }
+      },
+      "split": {
+        "val_size": 0.1,
+        "test_size": 0.2,
+        "use_official_split": true,
+        "strategy": "source_disjoint"
+      },
+      "image_cache_max_side": 448,
+      "validation": {
+        "min_image_side": 32,
+        "max_image_pixels": 40000000
+      }
+    },
+    "text": {
+      "model_name": "FacebookAI/xlm-roberta-base",
+      "max_length": 96,
+      "trainable_layers": 4,
+      "pooling": "mean"
+    },
+    "image": {
+      "backbone": "resnet50",
+      "image_size": 224,
+      "trainable_blocks": [
+        "layer4"
+      ]
+    },
+    "multimodal": {
+      "proj_dim": 256,
+      "attention_heads": 4
+    },
+    "training": {
+      "batch_size": 16,
+      "eval_batch_size": 32,
+      "max_epochs": 8,
+      "patience": 3,
+      "lr_backbone": 2e-05,
+      "lr_image_backbone": 0.0001,
+      "lr_head": 0.001,
+      "weight_decay": 0.01,
+      "warmup_ratio": 0.1,
+      "dropout": 0.3,
+      "grad_clip": 1.0,
+      "class_weighting": "sqrt_balanced",
+      "num_workers": 0
+    },
+    "explainability": {
+      "ig_steps": 32
+    }
+  },
+  "parameters": {
+    "total": 301815619,
+    "trainable": 44170755,
+    "frozen": 257644864
+  },
+  "text_model": "FacebookAI/xlm-roberta-base",
+  "image_weights": "torchvision ResNet50_Weights.IMAGENET1K_V2",
+  "dataset": "memosen",
+  "environment": {
+    "python": "3.13.9",
+    "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+    "processor": "arm",
+    "torch": "2.7.1",
+    "torchvision": "0.22.1",
+    "transformers": "4.57.6",
+    "cuda_available": false,
+    "mps_available": true,
+    "git_commit": null
+  },
+  "frozen_keys_count": 262,
+  "saved_keys_count": 265,
+  "saved_at": "2026-10-13T23:26:02+00:00"
+}

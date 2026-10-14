@@ -1,0 +1,175 @@
+{
+  "dataset": "memosen",
+  "synthetic": false,
+  "prepared_at": "2026-10-13T22:09:31+00:00",
+  "seed": 42,
+  "split_source": "source-disjoint (sources ranked by label-distribution JS divergence)",
+  "raw_records": 4372,
+  "usable_records": 4357,
+  "removed_by_reason": {
+    "exact duplicate": 6,
+    "cross-source duplicate of an earlier split": 5,
+    "invalid image": 4
+  },
+  "exact_duplicates_removed": 6,
+  "conflicting_duplicates_removed": 0,
+  "groups": 4345,
+  "sources": {
+    "Bangla Thug Life": {
+      "positive": 39,
+      "neutral": 11,
+      "negative": 352,
+      "split": "val"
+    },
+    "Halal Memes": {
+      "positive": 77,
+      "neutral": 63,
+      "negative": 206,
+      "split": "val"
+    },
+    "KAM": {
+      "positive": 839,
+      "neutral": 11,
+      "negative": 200,
+      "split": "train"
+    },
+    "bamboo-vaiya": {
+      "positive": 31,
+      "neutral": 44,
+      "negative": 463,
+      "split": "train"
+    },
+    "bangla-gag": {
+      "positive": 56,
+      "neutral": 11,
+      "negative": 93,
+      "split": "test"
+    },
+    "bangla-memes": {
+      "positive": 69,
+      "neutral": 8,
+      "negative": 134,
+      "split": "test"
+    },
+    "bangla-troll": {
+      "positive": 32,
+      "neutral": 6,
+      "negative": 31,
+      "split": "val"
+    },
+    "chosha": {
+      "positive": 1,
+      "neutral": 1,
+      "negative": 129,
+      "split": "train"
+    },
+    "direct-offense": {
+      "positive": 7,
+      "neutral": 0,
+      "negative": 74,
+      "split": "train"
+    },
+    "nurani-memes": {
+      "positive": 99,
+      "neutral": 6,
+      "negative": 119,
+      "split": "test"
+    },
+    "ovodro_img": {
+      "positive": 33,
+      "neutral": 96,
+      "negative": 673,
+      "split": "train"
+    },
+    "tangaila": {
+      "positive": 61,
+      "neutral": 33,
+      "negative": 249,
+      "split": "test"
+    }
+  },
+  "source_split_info": {
+    "js_divergence": {
+      "Bangla Thug Life": 0.20924499934481008,
+      "Halal Memes": 0.13258393433438576,
+      "KAM": 0.35872755452973065,
+      "bamboo-vaiya": 0.23858178558127194,
+      "bangla-gag": 0.030881275570242242,
+      "bangla-memes": 0.046953826828257716,
+      "bangla-troll": 0.12566486640818023,
+      "chosha": 0.3537989341841753,
+      "direct-offense": 0.26404579697084524,
+      "nurani-memes": 0.11068772461053533,
+      "ovodro_img": 0.2636300413142996,
+      "tangaila": 0.11044669675713885
+    },
+    "assignment": {
+      "bangla-gag": "test",
+      "bangla-memes": "test",
+      "tangaila": "test",
+      "nurani-memes": "test",
+      "bangla-troll": "val",
+      "Halal Memes": "val",
+      "Bangla Thug Life": "val",
+      "bamboo-vaiya": "train",
+      "ovodro_img": "train",
+      "direct-offense": "train",
+      "chosha": "train",
+      "KAM": "train"
+    },
+    "cross_split_duplicates_removed": 5
+  },
+  "multi_member_groups": 12,
+  "groups_spanning_splits": 0,
+  "missing_text": 0,
+  "split_sizes": {
+    "train": 2602,
+    "val": 817,
+    "test": 938
+  },
+  "label_distribution": {
+    "train": {
+      "positive": 911,
+      "neutral": 152,
+      "negative": 1539
+    },
+    "val": {
+      "positive": 148,
+      "neutral": 80,
+      "negative": 589
+    },
+    "test": {
+      "positive": 285,
+      "neutral": 58,
+      "negative": 595
+    }
+  },
+  "label_distribution_total": {
+    "positive": 1344,
+    "neutral": 290,
+    "negative": 2723
+  },
+  "scripts": {
+    "Bengali": 2962,
+    "Bengali+Latin": 904,
+    "Latin": 491
+  },
+  "code_mixed_fraction": 0.2074822125315584,
+  "text_words": {
+    "mean": 14.801009869176038,
+    "median": 14.0,
+    "max": 106
+  },
+  "token_length": {
+    "tokenizer": "FacebookAI/xlm-roberta-base",
+    "mean": 29.162497131053478,
+    "median": 27.0,
+    "p95": 55.0,
+    "max": 235
+  },
+  "image_size": {
+    "median_w": 960.0,
+    "median_h": 922.0,
+    "min_side": 177
+  }
+}

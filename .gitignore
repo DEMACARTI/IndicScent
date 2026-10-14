@@ -10,24 +10,14 @@ __pycache__/
 # data: raw datasets are not redistributed; regenerate with src/data/download.py + prepare.py
 data/raw/
 data/processed/
+data/processed_source_disjoint/
 data/cache/
 
-# model weights / large artifacts (regenerate with scripts/run_pipeline.py)
-artifacts/checkpoints/
+# trained checkpoints (*.pt) are tracked with Git LFS, see .gitattributes
 artifacts/logs/
-*.pt
-*.pth
-*.safetensors
 
 # secrets
 .env
 *.key
 kaggle.json
 
-# generated outputs not part of the main code (regenerate with scripts/run_pipeline.py,
-# scripts/make_slides.py and scripts/make_report_pdf.py)
-data/processed_source_disjoint/
-artifacts/
-docs/figures/
-*.pdf
-*.pptx

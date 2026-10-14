@@ -1,0 +1,86 @@
+{
+  "n": 874,
+  "accuracy": 0.7425629290617849,
+  "macro_precision": 0.591642751648035,
+  "macro_recall": 0.5885344470204564,
+  "macro_f1": 0.5889292824057779,
+  "weighted_precision": 0.7459128350911008,
+  "weighted_recall": 0.7425629290617849,
+  "weighted_f1": 0.7434209735714677,
+  "per_class": {
+    "positive": {
+      "precision": 0.7272727272727273,
+      "recall": 0.654275092936803,
+      "f1-score": 0.6888454011741683,
+      "support": 269.0
+    },
+    "neutral": {
+      "precision": 0.23880597014925373,
+      "recall": 0.27586206896551724,
+      "f1-score": 0.256,
+      "support": 58.0
+    },
+    "negative": {
+      "precision": 0.8088495575221238,
+      "recall": 0.8354661791590493,
+      "f1-score": 0.8219424460431655,
+      "support": 547.0
+    }
+  },
+  "confusion_matrix": [
+    [
+      176,
+      20,
+      73
+    ],
+    [
+      7,
+      16,
+      35
+    ],
+    [
+      59,
+      31,
+      457
+    ]
+  ],
+  "experiment": "multimodal_attention",
+  "split": "test",
+  "modality": "multimodal",
+  "fusion": "attention",
+  "checkpoint": "artifacts/checkpoints/multimodal_attention",
+  "checkpoint_epoch": 2,
+  "val_macro_f1_at_selection": 0.5629169481261168,
+  "dataset": "memosen",
+  "parameters": {
+    "total": 302474051,
+    "trainable": 44829187,
+    "frozen": 257644864
+  },
+  "evaluated_at": "2026-10-13T22:59:04+00:00",
+  "eval_pass_seconds": 20.86733929100228,
+  "throughput_examples_per_s": 41.883633932039295,
+  "training_seconds": 820.4501571250003,
+  "epochs_run": 5,
+  "training_device": "mps",
+  "latency": {
+    "device": "mps",
+    "n": 100,
+    "batch_size": 1,
+    "median_ms": 47.85831300068821,
+    "mean_ms": 82.73516409000877,
+    "p95_ms": 188.22967945234248
+  },
+  "modality_ablation": {
+    "image_neutralised": {
+      "accuracy": 0.7311212814645309,
+      "macro_f1": 0.4674045106952687,
+      "prediction_changed_rate": 0.20938215102974828
+    },
+    "text_removed": {
+      "accuracy": 0.6750572082379863,
+      "macro_f1": 0.3761662646560351,
+      "prediction_changed_rate": 0.2723112128146453
+    }
+  }
+}

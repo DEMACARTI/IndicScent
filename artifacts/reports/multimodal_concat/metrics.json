@@ -1,0 +1,86 @@
+{
+  "n": 874,
+  "accuracy": 0.7425629290617849,
+  "macro_precision": 0.5947621089100807,
+  "macro_recall": 0.5667239336571562,
+  "macro_f1": 0.5776611293852674,
+  "weighted_precision": 0.7306837634564833,
+  "weighted_recall": 0.7425629290617849,
+  "weighted_f1": 0.7352768650014764,
+  "per_class": {
+    "positive": {
+      "precision": 0.6987951807228916,
+      "recall": 0.6468401486988847,
+      "f1-score": 0.6718146718146718,
+      "support": 269.0
+    },
+    "neutral": {
+      "precision": 0.2926829268292683,
+      "recall": 0.20689655172413793,
+      "f1-score": 0.24242424242424243,
+      "support": 58.0
+    },
+    "negative": {
+      "precision": 0.7928082191780822,
+      "recall": 0.8464351005484461,
+      "f1-score": 0.8187444739168878,
+      "support": 547.0
+    }
+  },
+  "confusion_matrix": [
+    [
+      174,
+      15,
+      80
+    ],
+    [
+      5,
+      12,
+      41
+    ],
+    [
+      70,
+      14,
+      463
+    ]
+  ],
+  "experiment": "multimodal_concat",
+  "split": "test",
+  "modality": "multimodal",
+  "fusion": "concat",
+  "checkpoint": "artifacts/checkpoints/multimodal_concat",
+  "checkpoint_epoch": 2,
+  "val_macro_f1_at_selection": 0.5539170201484623,
+  "dataset": "memosen",
+  "parameters": {
+    "total": 301815619,
+    "trainable": 44170755,
+    "frozen": 257644864
+  },
+  "evaluated_at": "2026-10-13T22:58:02+00:00",
+  "eval_pass_seconds": 20.331714374999137,
+  "throughput_examples_per_s": 42.987029223404434,
+  "training_seconds": 822.8610607080009,
+  "epochs_run": 5,
+  "training_device": "mps",
+  "latency": {
+    "device": "mps",
+    "n": 100,
+    "batch_size": 1,
+    "median_ms": 38.759208500778186,
+    "mean_ms": 38.37091794994194,
+    "p95_ms": 44.28615480301232
+  },
+  "modality_ablation": {
+    "image_neutralised": {
+      "accuracy": 0.6739130434782609,
+      "macro_f1": 0.5111077112670365,
+      "prediction_changed_rate": 0.2311212814645309
+    },
+    "text_removed": {
+      "accuracy": 0.7276887871853547,
+      "macro_f1": 0.4696567704441972,
+      "prediction_changed_rate": 0.13958810068649885
+    }
+  }
+}

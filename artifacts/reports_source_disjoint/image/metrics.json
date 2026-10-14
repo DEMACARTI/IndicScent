@@ -1,0 +1,74 @@
+{
+  "n": 938,
+  "accuracy": 0.5565031982942431,
+  "macro_precision": 0.37077732599856494,
+  "macro_recall": 0.3689634837601102,
+  "macro_f1": 0.3638448296033829,
+  "weighted_precision": 0.534246196495569,
+  "weighted_recall": 0.5565031982942431,
+  "weighted_f1": 0.5393101015621862,
+  "per_class": {
+    "positive": {
+      "precision": 0.3567567567567568,
+      "recall": 0.23157894736842105,
+      "f1-score": 0.28085106382978725,
+      "support": 285.0
+    },
+    "neutral": {
+      "precision": 0.09333333333333334,
+      "recall": 0.1206896551724138,
+      "f1-score": 0.10526315789473684,
+      "support": 58.0
+    },
+    "negative": {
+      "precision": 0.6622418879056047,
+      "recall": 0.7546218487394958,
+      "f1-score": 0.7054202670856246,
+      "support": 595.0
+    }
+  },
+  "confusion_matrix": [
+    [
+      66,
+      28,
+      191
+    ],
+    [
+      13,
+      7,
+      38
+    ],
+    [
+      106,
+      40,
+      449
+    ]
+  ],
+  "experiment": "image",
+  "split": "test",
+  "modality": "image",
+  "fusion": null,
+  "checkpoint": "artifacts/checkpoints_source_disjoint/image",
+  "checkpoint_epoch": 5,
+  "val_macro_f1_at_selection": 0.4118593978509195,
+  "dataset": "memosen",
+  "parameters": {
+    "total": 23514179,
+    "trainable": 14970883,
+    "frozen": 8543296
+  },
+  "evaluated_at": "2026-10-14T00:36:34+00:00",
+  "eval_pass_seconds": 14.180284666999796,
+  "throughput_examples_per_s": 66.14817840595988,
+  "training_seconds": 582.3556336660004,
+  "epochs_run": 8,
+  "training_device": "mps",
+  "latency": {
+    "device": "mps",
+    "n": 100,
+    "batch_size": 1,
+    "median_ms": 20.550666500639636,
+    "mean_ms": 20.95321001004777,
+    "p95_ms": 22.377714249887504
+  }
+}
